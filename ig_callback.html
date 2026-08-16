@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<title>Instagram OAuth Callback</title>
+<style>
+  body { font-family: system-ui, sans-serif; max-width: 640px; margin: 60px auto; padding: 0 20px; }
+  code { background: #f0f0f0; padding: 12px; display: block; word-break: break-all; border-radius: 6px; font-size: 14px; }
+</style>
+</head>
+<body>
+<h1>Instagram-Login abgeschlossen</h1>
+<p>Der Autorisierungscode aus der URL:</p>
+<code id="code">wird geladen...</code>
+<script>
+  const params = new URLSearchParams(window.location.search);
+  document.getElementById('code').textContent = params.get('code') || params.get('error') || '(kein code-Parameter gefunden)';
+</script>
+</body>
+</html>
